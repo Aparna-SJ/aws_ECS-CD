@@ -2,6 +2,9 @@ version: 0.0
 os: linux
 hooks:	
   BeforeInstall:	 
+    - location: install
+      timeout: 300	     
+      runas: root
     - location: RunJava
       timeout: 300	     
       runas: root	
