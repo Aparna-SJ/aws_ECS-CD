@@ -1,5 +1,7 @@
+---
 hooks:	
   BeforeInstall:	 
     - location: RunJava
       timeout: 300	     
       runas: root	
+version: 0.1
