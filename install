@@ -3,4 +3,4 @@ sudo apt-get update
 sudo apt-get install docker.io -y
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
-
+sudo git clone https://github.com/Aparna-SJ/aws_ECS-CD.git
