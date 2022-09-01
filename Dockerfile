@@ -1,5 +1,5 @@
 FROM openjdk:8
-COPY ./src/java
-WORKDIR /src/java
-RUN ["javac",HelloWorld.java]
-ENTRYPOINT ["javac",HelloWorld]
+RUN javac HelloWorld.java
+CMD ["java", "HelloWorld"]
+EXPOSE 80
+
