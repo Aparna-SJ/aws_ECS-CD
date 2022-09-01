@@ -1,11 +1,21 @@
-version: 0.0
-os: linux
-hooks:	
-  BeforeInstall:	 
-    - location: install
-      timeout: 300	     
-      runas: root
-    - location: RunJava
-      timeout: 300	     
-      runas: root	
+--- 
+phases: 
+  build: 
+    commands: 
+      - "echo Build started on `date`"
+      - "echo Building the Docker image..."
+      - "docker build -t kishore23698/ak2-img ."
+      - "docker tag kishore23698/ak2-img kishore23698/ak2-img:latest"
+  post_build: 
+    commands: 
+      - "echo Build completed on `date`"
+      - "echo Pushing the Docker image..."
+      - "docker push kishore23698/ak2-img:latest"
+  pre_build: 
+    commands: 
+      - "echo Logging in to Docker Hub..."
+      - "docker login --username=\"kishore23698\" --password=\"kishore@23698\""
+version: 0.1
+
+
 
